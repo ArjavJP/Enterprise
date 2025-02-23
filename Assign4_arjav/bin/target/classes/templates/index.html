@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop Registration</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Workshop Registration</h2>
+
+    <!-- Success Message -->
+    <p class="success" th:if="${message}" th:text="${message}"></p>
+
+    <form th:action="@{/register}" th:object="${customer}" method="post">
+
+        <div class="left">
+            <h3>Personal Information</h3>
+
+            <label>First Name</label>
+            <input type="text" th:field="*{firstName}">
+            <p class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+
+            <label>Last Name</label>
+            <input type="text" th:field="*{lastName}">
+            <p class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+
+            <label>Company/Institution</label>
+            <input type="text" th:field="*{company}">
+            <p class="error" th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></p>
+
+            <label>Email</label>
+            <input type="email" th:field="*{email}">
+            <p class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+
+            <label>Phone Number</label>
+            <input type="text" th:field="*{phoneNumber}">
+            <p class="error" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
+
+            <h3>Address & Payment Details</h3>
+
+            <label>Address</label>
+            <textarea th:field="*{address}"></textarea>
+            <p class="error" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
+
+            <label>City</label>
+            <input type="text" th:field="*{city}">
+            <p class="error" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></p>
+
+            <label>State / Province / Region</label>
+            <input type="text" th:field="*{state}">
+            <p class="error" th:if="${#fields.hasErrors('state')}" th:errors="*{state}"></p>
+
+            <label>Country</label>
+            <input type="text" th:field="*{country}">
+            <p class="error" th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></p>
+        </div>
+
+        <div class="right">
+            <h3>Lunch</h3>
+            <label>Meal Preference</label>
+            <select th:field="*{mealPreference}">
+                <option value="">- Select -</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+            </select>
+            <p class="error" th:if="${#fields.hasErrors('mealPreference')}" th:errors="*{mealPreference}"></p>
+
+            <h3>Payment Details</h3>
+
+            <label>Payment Mode</label>
+            <div class="payment-options">
+                <label><input type="checkbox" th:field="*{paymentMode}" value="Cash"> Cash</label>
+                <label><input type="checkbox" th:field="*{paymentMode}" value="Cheque"> Cheque</label>
+                <label><input type="checkbox" th:field="*{paymentMode}" value="Demand Draft"> Demand Draft</label>
+            </div>
+            <p class="error" th:if="${#fields.hasErrors('paymentMode')}" th:errors="*{paymentMode}"></p>
+
+            <label>DD/Cheque No:</label>
+            <input type="text" th:field="*{ddOrChequeNo}">
+            <p class="error" th:if="${#fields.hasErrors('ddOrChequeNo')}" th:errors="*{ddOrChequeNo}"></p>
+
+            <label>Drawn On (Bank Name):</label>
+            <input type="text" th:field="*{drawnOn}">
+            <p class="error" th:if="${#fields.hasErrors('drawnOn')}" th:errors="*{drawnOn}"></p>
+
+            <label>Payable at:</label>
+            <input type="text" th:field="*{payableAt}">
+            <p class="error" th:if="${#fields.hasErrors('payableAt')}" th:errors="*{payableAt}"></p>
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+</div>
+
+</body>
+</html>

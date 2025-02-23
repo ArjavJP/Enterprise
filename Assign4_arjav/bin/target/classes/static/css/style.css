@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 60%;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Layout */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Form Sections */
+form .left, form .right {
+    width: 48%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+form .left {
+    border-right: 2px solid #ddd;
+}
+
+form .right {
+    padding-left: 20px;
+}
+
+/* Headings */
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+/* Labels */
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Input Fields */
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border 0.3s;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border: 1px solid #007bff;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Payment Options */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+button[type="reset"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+button[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+/* Error Messages */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+/* Success Message */
+.success {
+    color: green;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form .left, form .right {
+        width: 100%;
+        border-right: none;
+        padding-left: 0;
+    }
+}
